@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-my_range = range(97, 123)
-for i in my_range:
+for i in range(97, 123):
     print(f"{i:c}", end="")
