@@ -34,6 +34,7 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            str = '#' * self.__size
-            for x in range(self.__size):
-                print(str)
+            for row in range(self.__size):
+              for column in range(self.__size):
+                print("#", end="")
+              print()
