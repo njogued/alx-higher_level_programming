@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Clash between two players
+"""
 import random
 
 class Playa:
@@ -56,7 +59,7 @@ def main():
     print(f"Player 1: {player1.health} and player 2: {player2.health}")
 
   print()
-  print("In the Ed: ")
+  print("In the End: ")
   print(player1)
   print(player2)
   print()
