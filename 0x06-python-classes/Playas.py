@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """
 Clash between two players
+
+Note: property without corresponding setter
+for the attribute results in an Attribute Error.
+more info: https://stackoverflow.com/questions/22562425/attributeerror-cant-set-attribute-in-python
+
+Note: __str__(self) method is used to print all the attributes
+of the object when print(object) is called instead of
+printing the address
 """
 import random
 
