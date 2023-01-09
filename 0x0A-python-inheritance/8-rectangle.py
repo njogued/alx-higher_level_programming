@@ -26,7 +26,7 @@ class BaseGeometry:
 class Rectangle(BaseGeometry):
     """python3 -c 'print(__import__("my_module").MyClass.__doc__)'"""
     def __init__(self, width, height):
-        self.integer_validator("width", width)
+        super().integer_validator("width", width)
         self.__width = width
-        self.integer_validator("height", height)
+        super().integer_validator("height", height)
         self.__height = height
