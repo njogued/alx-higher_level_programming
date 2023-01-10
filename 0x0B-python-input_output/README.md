@@ -126,7 +126,7 @@ Write a class Student that defines a student by: (based on 10-student.py)
 ```
 
 ### Task 12. Pascal's Triangle
-> Technical interview preparation:
+> `Technical interview preparation:`
 ```
 >> You are not allowed to google anything
 >> Whiteboard first
