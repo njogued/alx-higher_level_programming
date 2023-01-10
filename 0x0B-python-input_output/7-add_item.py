@@ -10,9 +10,9 @@ import json
 load = __import__('6-load_from_json_file').load_from_json_file
 save = __import__('5-save_to_json_file').save_to_json_file
 jsonfile = "add_item.json"
-args=sys.argv[1:]
+args = sys.argv[1:]
 try:
-    my_list=load(jsonfile)
+    my_list = load(jsonfile)
 except FileNotFoundError:
     save(args, jsonfile)
 else:
