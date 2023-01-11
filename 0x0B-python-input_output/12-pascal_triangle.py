@@ -1,4 +1,14 @@
+#!/usr/bin/python3
+
+"""
+Module contains a function to print the pascals triangle
+"""
+
+
 def pascal_triangle(n):
+    """
+    The function creates a list for each row of the pascal's triangle
+    """
     pascal = []
     if n == 0:
         return pascal
