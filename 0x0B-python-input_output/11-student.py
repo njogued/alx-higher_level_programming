@@ -28,3 +28,10 @@ class Student:
             return result
         elif attrs is None:
             return self.__dict__
+
+    def reload_from_json(self, json):
+        """deserialization"""
+
+        for i in json.keys():
+            self.__dict__[i] = json[i]
+        return self.__dict__
