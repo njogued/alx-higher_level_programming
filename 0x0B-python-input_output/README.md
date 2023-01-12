@@ -126,7 +126,7 @@ Write a class Student that defines a student by: (based on 10-student.py)
 ```
 
 ### Task 12. Pascal's Triangle
-> `Technical interview preparation:`
+> `**Technical interview preparation:**`
 ```
 >> You are not allowed to google anything
 >> Whiteboard first
@@ -135,3 +135,10 @@ Write a class Student that defines a student by: (based on 10-student.py)
 - You can assume n will be always an integer
 - You are not allowed to import any module
 ```
+
+### Task 13. Search and update
+**Write a function that inserts a line of text to a file, after each line containing a specific string:**
+- Prototype: ``def append_after(filename="", search_string="", new_string=""):``
+- You must use the with statement
+- You don’t need to manage file permission or file doesn't exist exceptions.
+- You are not allowed to import any module
