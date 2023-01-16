@@ -119,3 +119,6 @@ class Rectangle(Base):
                     self.y = value
                 if key == "id":
                     self.id = value
+"""for key,value in kwargs.items():
+       setattr(self, )
+"""
