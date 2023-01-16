@@ -84,7 +84,10 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
+        for new_line in range(self.__y):
+            print()
         for row in range(self.__height):
+            print(" " * self.__x, end="")
             print("#" * self.__width)
 
     def __str__(self):
