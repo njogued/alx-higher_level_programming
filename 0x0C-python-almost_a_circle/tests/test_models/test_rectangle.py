@@ -1110,7 +1110,6 @@ class TestRectangle_stdout(unittest.TestCase):
     @staticmethod
     def capture_stdout(rect, method):
         """Captures and returns text printed to stdout.
-
         Args:
             rect (Rectangle): The Rectangle to print to stdout.
             method (str): The method to run on rect.
