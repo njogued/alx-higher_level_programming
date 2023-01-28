@@ -1,4 +1,5 @@
 #!/bin/bash
-echo "import py_compile
-py_compile.compile(\"$PYFILE\", \"${PYFILE}c\")
-" | python3
+
+echo "Compiling main.py ..."
+python3 -m py_compile $PYFILE
+mv ./__pycache__/main.cpython-38.pyc main.pyc
