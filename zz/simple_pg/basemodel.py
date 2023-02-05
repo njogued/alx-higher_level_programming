@@ -4,21 +4,21 @@ Base model
 '''
 class BaseModel():
     def __init__(self, name, mail):
-        self.name = name
-        self.mail = mail
+        self._name = name
+        self._mail = mail
     
     @property
     def name(self):
-        return self.name
+        return self._name
 
     @property
     def mail(self):
-        return self.mail
+        return self._mail
 
     @name.setter
     def name(self, value):
-        self.name = value
+        self._name = value
 
     @mail.setter
     def mail(self, value):
-        self.mail = value
+        self._mail = value

@@ -4,6 +4,7 @@ Using cmd in commandline programs
 '''
 import cmd
 import time
+create_user = __import__(users).User
 
 class ConsolePg(cmd.Cmd):
     print("STARTING THE PROGRAM\n---------------------")
