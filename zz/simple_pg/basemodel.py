@@ -3,6 +3,7 @@
 Base model for HBNB project
 '''
 from datetime import datetime
+import json
 from uuid import uuid4
 
 class BaseModel():
@@ -27,7 +28,7 @@ class BaseModel():
         '''
         return a string representation of the class
         '''
-        return f"[{__class__.__name__}] ({self.id}) {self.__dict__}"
+        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
         '''
@@ -39,4 +40,9 @@ class BaseModel():
         '''
         returns a dict of key/value pairs of the instance
         '''
-        sd = self.__dict__
+        dict_rep = {}
+        dict_rep["__class__"] = self.__class__.__name__
+        self.created_at = self.created_at.isoformat()
+        self.updated_at = self.updated_at.isoformat()
+        dict_rep.update(self.__dict__)
+        return dict_rep
