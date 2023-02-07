@@ -20,16 +20,22 @@ class FileStorage:
         '''
         Sets the obj in objects
         '''
-        pass
+        obj_name = f"{obj.__class.__name__}.{obj.id}"
+        self.__objects[obj_name] = obj.to_dict() 
 
     def save(self):
         '''
         Serialize the objects to JSON file (__file_path)
         '''
-        pass
+        with open(self.__file_path, "w") as f:
+            json.dump(self.__objects, f)
 
     def reload(self):
         '''
         Deserialize the JSON file to objects
         '''
-        pass
+        if self.__file_path:
+            with open(self.__file_path, "r") as f:
+                self.__objects = json.load(f)
+        else:
+            pass
