@@ -8,6 +8,7 @@ from datetime import datetime
 import json
 from uuid import uuid4
 
+
 class BaseModel():
     '''
     Methods: save, to_dict, __str__, __init__
@@ -51,9 +52,8 @@ class BaseModel():
         '''
         returns a dict of key/value pairs of the instance
         '''
-        dict_rep = {}
-        dict_rep["__class__"] = self.__class__.__name__
-        self.created_at = self.created_at.isoformat()
-        self.updated_at = self.updated_at.isoformat()
-        dict_rep.update(self.__dict__)
+        dict_rep = self.__dict__.copy()
+        dict_rep.update({"__class__":self.__class__.__name__})
+        dict_rep.update({"created_at":self.created_at.isoformat()})
+        dict_rep.update({"updated_at":self.updated_at.isoformat()})
         return dict_rep

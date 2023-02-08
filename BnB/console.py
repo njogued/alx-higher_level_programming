@@ -4,12 +4,13 @@ Console program
 '''
 import cmd
 
+
 class HBNBCommand(cmd.Cmd):
     '''
     Cmd application
     '''
     prompt = "(hbnb) "
-    
+
     def do_quit(self, line):
         '''Quit command to exit the program
 
@@ -20,7 +21,7 @@ class HBNBCommand(cmd.Cmd):
         '''Quit command to exit the program
 
         '''
-        return True        
+        return True
 
     def emptyline(self):
         '''

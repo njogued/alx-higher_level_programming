@@ -3,6 +3,8 @@
 Module contains the FileStorage class
 '''
 import json
+
+
 class FileStorage:
     '''
     Class for json.dump and json.load
@@ -21,7 +23,7 @@ class FileStorage:
         Sets the obj in objects
         '''
         obj_name = f"{obj.__class__.__name__}.{obj.id}"
-        self.__objects[obj_name] = obj.to_dict() 
+        self.__objects[obj_name] = obj.to_dict()
 
     def save(self):
         '''
