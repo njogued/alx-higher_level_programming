@@ -6,7 +6,6 @@ import sys
 sys.path.append("/alx-higher_level_programming/BnB")
 from models.base_model import BaseModel
 
-
 class TestBase(unittest.TestCase):
     '''Test the base class methods and attributes'''
     @classmethod

@@ -30,7 +30,7 @@ class FileStorage:
         Serialize the objects to JSON file (__file_path)
         '''
         with open(FileStorage.__file_path, "w") as f:
-            json.dump(FileStorage.__objects, f)
+            json.dump(FileStorage.__objects, f, indent=2)
 
     def reload(self):
         '''
