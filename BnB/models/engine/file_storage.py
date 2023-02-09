@@ -4,7 +4,6 @@ Module contains the FileStorage class
 '''
 import json
 
-
 class FileStorage:
     '''
     Class for json.dump and json.load
@@ -23,14 +22,19 @@ class FileStorage:
         Sets the obj in objects
         '''
         obj_name = f"{obj.__class__.__name__}.{obj.id}"
-        self.__objects[obj_name] = obj.to_dict()
+        FileStorage.__objects[obj_name] = obj
 
     def save(self):
         '''
         Serialize the objects to JSON file (__file_path)
         '''
+        tcid = {}
+        for key, value in FileStorage.__objects.items():
+            value = value.to_dict()
+            tcid[key] = value
+
         with open(FileStorage.__file_path, "w") as f:
-            json.dump(FileStorage.__objects, f, indent=2)
+            json.dump(tcid, f, indent=2)
 
     def reload(self):
         '''
@@ -39,6 +43,9 @@ class FileStorage:
         if FileStorage.__file_path:
             try:
                 with open(FileStorage.__file_path) as f:
-                    FileStorage.__objects = json.load(f)
+                    obj_dicts = json.load(f)
             except Exception:
                 pass
+            for key, value in obj_dicts.items():
+                model = BaseModel(**(obj_dicts[key]))
+                FileStorage.__objects[key] = model
