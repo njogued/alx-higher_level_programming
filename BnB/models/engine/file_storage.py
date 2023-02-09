@@ -3,7 +3,6 @@
 Module contains the FileStorage class
 '''
 import json
-from models.base_model import BaseModel
 
 
 class FileStorage:
@@ -42,13 +41,15 @@ class FileStorage:
         '''
         Deserialize the JSON file to objects
         '''
+        from models.base_model import BaseModel
         if FileStorage.__file_path:
             try:
                 with open(FileStorage.__file_path) as f:
                     obj_dicts = json.load(f)
+                    empty = {}
+                    for key, value in obj_dicts.items():
+                        model = BaseModel(**(obj_dicts[key]))
+                        empty[key] = model
+                    FileStorage.__objects = empty
             except FileNotFoundError:
                 pass
-            if obj_dicts:
-                for key, value in obj_dicts.items():
-                    model = BaseModel(**(obj_dicts[key]))
-                    FileStorage.__objects[key] = model
