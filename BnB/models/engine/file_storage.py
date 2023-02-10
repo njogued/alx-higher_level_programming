@@ -35,21 +35,23 @@ class FileStorage:
             tcid[key] = value
 
         with open(FileStorage.__file_path, "w") as f:
-            json.dump(tcid, f, indent=2)
+            json.dump(tcid, f, sort_keys=True, indent=2)
 
     def reload(self):
         '''
         Deserialize the JSON file to objects
         '''
         from models.base_model import BaseModel
+        all_models = {"BaseModel": BaseModel}
         if FileStorage.__file_path:
             try:
                 with open(FileStorage.__file_path) as f:
                     obj_dicts = json.load(f)
-                    empty = {}
+                    '''empty = {}'''
                     for key, value in obj_dicts.items():
-                        model = BaseModel(**(obj_dicts[key]))
-                        empty[key] = model
-                    FileStorage.__objects = empty
+                        mod_name = all_models[value["__class__"]]
+                        model = mod_name(**(obj_dicts[key]))
+                        '''empty[key] = model'''
+                        FileStorage.__objects[key] = model
             except FileNotFoundError:
                 pass

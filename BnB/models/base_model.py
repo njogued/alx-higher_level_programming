@@ -53,7 +53,7 @@ class BaseModel():
         returns a dict of key/value pairs of the instance
         '''
         dict_rep = self.__dict__.copy()
-        dict_rep.update({"__class__":self.__class__.__name__})
-        dict_rep.update({"created_at":self.created_at.isoformat()})
-        dict_rep.update({"updated_at":self.updated_at.isoformat()})
+        dict_rep.update({"__class__": self.__class__.__name__})
+        dict_rep.update({"created_at": self.created_at.isoformat()})
+        dict_rep.update({"updated_at": self.updated_at.isoformat()})
         return dict_rep
