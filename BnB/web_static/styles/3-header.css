@@ -3,7 +3,7 @@ header{
   border-bottom: 1px solid #CCCCCC;
   height: 70px;
   width: 100%;
-  background-image: url("/alx-higher_level_programming/BnB/web_static/images/logo.png");
+  background-image: url("../images/logo.png");
   background-repeat: no-repeat;
   background-position: left 20px center;
 }
