@@ -15,7 +15,7 @@ text = "In 100 words or less, explain the domestication of cats"
 # length = input("Max words output: ")
 length = 1000
 print(os.getenv("OPENAI_API_KEY"))
-openai.api_key="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"
+openai.api_key="API-KEY"
 response = openai.Completion.create(
     model="text-davinci-003",
     prompt = text,
