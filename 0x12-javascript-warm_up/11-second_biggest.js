@@ -1,14 +1,11 @@
 #!/usr/bin/node
+
 if (process.argv.length < 4) {
-  console.log(0);
+  console.log('0');
 } else {
-  let largest = 0;
-  const array = [];
-  for (let x = 2; x < process.argv.length; x++) {
-    if (process.argv[x] >= largest) {
-      largest = process.argv[x];
-      array.unshift(largest);
-    }
-  }
-  console.log(array[1]);
+  const array = process.argv.slice(2, process.argv.length);
+  array.sort(function (a, b) { return a - b; });
+  array.pop();
+  const max = Math.max(...array);
+  console.log(max);
 }
