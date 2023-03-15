@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 class Rectangle {
   constructor (w, h) {
     if (h > 0 && w > 0) {
