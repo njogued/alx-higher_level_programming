@@ -18,7 +18,7 @@ if __name__ == "__main__":
             db=db_name
             )
         cur = db.cursor()
-        cur.execute("SELECT * FROM states WHERE name = '{}' \
+        cur.execute("SELECT * FROM states WHERE BINARY name = '{}' \
         ORDER BY states.id".format(search))
         rows = cur.fetchall()
         for row in rows:
