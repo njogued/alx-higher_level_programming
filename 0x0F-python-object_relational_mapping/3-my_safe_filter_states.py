@@ -1,34 +1,28 @@
 #!/usr/bin/python3
+""" selecting with mysqldb """
+import MySQLdb
+import sys
 
-""" a script that takes in arguments and displays all values in the states
-table of hbtn_0e_0_usa where name matches the argument. But this time, write
-one that is safe from MySQL injections!"""
 
 if __name__ == "__main__":
-
-    import MySQLdb
-    from sys import argv
-
-    connection = MySQLdb.connect(
-                                    host="localhost",
-                                    user=argv[1],
-                                    password=argv[2],
-                                    database=argv[3]
-
-                                    )
-
-    cursor = connection.cursor()
-    searched = argv[4]
-
-    query = "SELECT * FROM states WHERE BINARY name=%s ORDER BY id ASC"
-
-    cursor.execute(query, (searched,))
-
-    results = cursor.fetchall()
-
-    for result in results:
-
-        print(result)
-
-    cursor.close()
+    try:
+        connection = MySQLdb.connect(
+            host="localhost",
+            user=sys.argv[1],
+            passwd=sys.argv[2],
+            port=3306,
+            db=sys.argv[3]
+        )
+    except MySQLdb.Error:
+        print("error connecting")
+    cur = connection.cursor()
+    try:
+        cur.execute("SELECT * FROM states WHERE name = %s ORDER BY\
+        states.id", (sys.argv[4],))
+        rows = cur.fetchall()
+        for row in rows:
+            print(row)
+    except MySQLdb.Error:
+        print("execution failed")
+    cur.close()
     connection.close()
