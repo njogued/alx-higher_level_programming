@@ -54,9 +54,10 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, line):
         '''create a new instance of BaseModel'''
-        check = HBNBCommand.validate(line)
+        l_list = line.split(" ")
+        check = HBNBCommand.validate(l_list[0])
         if check is True:
-            obj = HBNBCommand.classes[line]()
+            obj = HBNBCommand.classes[l_list[0]]()
             obj.save()
             print(obj.id)
 
