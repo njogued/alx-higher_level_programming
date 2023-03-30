@@ -57,8 +57,7 @@ Connection: keep-alive
 ETag: "6423437b-d"
 Accept-Ranges: bytes
 ```
-
-####
+  
 #### NOTE
 - HTTP is stateless, ie. does not keep track of what has been done in the past.
 
