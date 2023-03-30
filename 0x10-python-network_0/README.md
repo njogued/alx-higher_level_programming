@@ -4,10 +4,10 @@
 [Resource](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html)
 #### HTTP (HyperText Transfer Protocol)
 - HTTP is an application layer (Layer #7) protocol [designed to transmit data between a webserver and the client](https://www.checkpoint.com/cyber-hub/network-security/what-is-the-osi-model-understanding-the-7-layers/#:~:text=The%20application%20layer%20includes%20protocols,web%20server%20and%20a%20client.)  
-- ChatGPT: Imagine that the internet is like a vast library of information, and each web page is like a book in that library. HTTP is like the librarian who helps you find and retrieve the book you're looking for.  
+- [ChatGPT](https://chat.openai.com/chat): Imagine that the internet is like a vast library of information, and each web page is like a book in that library. HTTP is like the librarian who helps you find and retrieve the book you're looking for.  
 - When a user tries to access a URL, the browser sends a HTTP request to the server hosting the web server. The server sends a HTTP response back with the page requested and other info necessary such as images, CSS, & JavaScript code.
 
-#### HTTP Request and Response Messages 
+#### HTTP Request Messages 
 - The URL (Uniform Resource Locator), uniquely identifies a resource over the web. The URL has 4 parts: the protocol, hostname, port, path and file name.```protocol://hostname:port/path-and-file-name```
 - The HTTP request message has: 
 ```
@@ -26,7 +26,8 @@ User-Agent: curl/7.68.0
 ```
 ##### Request Methods
 Request Methods include: GET, POST, PUT, DELETE, HEAD, DELETE, TRACE, OPTIONS, CONNECT, others  
-  
+
+#### HTTP Response Messages
 - The HTTP response message has:
 ```
 Status Line
@@ -38,11 +39,11 @@ The status line: ```HTTP-version status-code reason-phrase```
 The response header has name:value pairs with names such as Content-Type, Content-Length, Connection, and Keep-Alive. 
 ##### Status Codes - [Resource](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 - Status codes are classified as:  
-        100 - 199: Informational responses
-        200 - 299: Successful responses
-        300 - 399: Redirection messages
-        400 - 499: Client error responses
-        500 - 599: Server error responses
+        100 - 199: Informational responses  
+        200 - 299: Successful responses  
+        300 - 399: Redirection messages  
+        400 - 499: Client error responses  
+        500 - 599: Server error responses  
 
 - The HTTP response message may be:
 ```
