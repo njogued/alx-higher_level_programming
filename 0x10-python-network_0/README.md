@@ -8,18 +8,23 @@
 - The URL (Uniform Resource Locator), uniquely identifies a resource over the web. The URL has 4 parts: the protocol, hostname, port, path and file name.```protocol://hostname:port/path-and-file-name```
 - The HTTP request message may then be:
 ```
-GET path-and-file-name HTTP/1.1
-Host: hostname
-Accept: image/gif
-User-Agent: Mozilla/4.0
+> GET / HTTP/1.1
+> Host: njogued.tech
+> User-Agent: curl/7.68.0
 ```
 
 - The HTTP response message may be:
 ```
 HTTP/1.1 200 OK
-Date: Thur, 30 Mar 2023
-Server: Nginx
-
+Server: nginx/1.18.0 (Ubuntu)
+Date: Thu, 30 Mar 2023 17:02:51 GMT
+Content-Type: text/html
+Content-Length: 13
+Last-Modified: Tue, 28 Mar 2023 19:43:55 GMT
+Connection: keep-alive
+ETag: "6423437b-d"
+Accept-Ranges: bytes
+```
 #### NOTE
 - HTTP is stateless, ie. does not keep track of what has been done in the past.
 
