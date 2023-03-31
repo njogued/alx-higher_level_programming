@@ -10,6 +10,7 @@ if __name__ == "__main__":
     mail = v[2]
     email = {"email" : mail}
     data = urlencode(email)
+    data = data.encode('ascii')
     req = Request(url, data)
     with urlopen(req) as response:
         body = response.read()
