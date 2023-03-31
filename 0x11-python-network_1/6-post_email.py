@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 '''Use requests to send POST request'''
-from requests import get
+from requests import get, post
 from sys import argv
 
 if __name__ == "__main__":
-    response = get(argv[1], params={'email': argv[2]})
+    response = post(argv[1], {'email': argv[2]})
     print(response.text)
