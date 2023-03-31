@@ -6,6 +6,6 @@ from sys import argv as v
 if __name__ == "__main__":
     try:
         with request.urlopen(v[1]) as response:
-            print(response.body)
+            print(response.read().decode("utf-8"))
     except error.HTTPError as e:
-        print(e)
+        print(f'Error code: {e.status}')
