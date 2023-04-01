@@ -1,7 +1,7 @@
 ### 0x11. Python - Network #1
 
 #### Concepts
-[Resource - The urllib Package](https://docs.python.org/3/howto/urllib2.html)
+[Resource - The urllib Package](https://docs.python.org/3/howto/urllib2.html)  
 [Resource - Requests](https://requests.readthedocs.io/en/latest/user/quickstart/#passing-parameters-in-urls)
 
 #### The urllib Package
