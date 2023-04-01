@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" using an api with auth"""
+""" using an apis"""
 
 import requests
 import sys

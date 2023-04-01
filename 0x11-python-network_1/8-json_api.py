@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" accessing json object """
+""" using requests.json """
 
 import requests
 from sys import argv
