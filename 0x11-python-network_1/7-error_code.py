@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""handling errors"""
+"""handling exceptions"""
 
 import requests
 from sys import argv
