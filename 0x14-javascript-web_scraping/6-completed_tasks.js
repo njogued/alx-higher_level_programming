@@ -2,13 +2,13 @@
 
 // Print the number of completed tasks
 
-address = process.argv[2];
+const address = process.argv[2];
 
 const rq = require('request');
 let tasks = 0;
 
 // Declare a dict that will be updated with tasks and id values
-let dict = {};
+const dict = {};
 
 rq(address, (error, response, body) => {
   if (error) throw error;
@@ -17,11 +17,10 @@ rq(address, (error, response, body) => {
     tasks = 0;
     for (let j = 0; j <= output.length; j++) {
       // output[j] prevents running out of index
-      if (output[j] && output[j].userId == i && output[j].completed == true)
-        tasks += 1;
-        };
-    dict[i] = tasks
+      if (output[j] && output[j].userId === i && output[j].completed === true) { tasks += 1; }
+    }
+    if (tasks) dict[i] = tasks;
     // console.log(`'${i}': ${tasks}`)
-    };
-    console.log(dict);
+  }
+  console.log(dict);
 });
