@@ -11,7 +11,7 @@ const fs = require('fs');
 // Read the file using fs.readFile
 fs.readFile(file, 'utf-8', (err, data) => {
   if (err) {
-    console.log(data);
+    console.log(err);
     return;
   }
   console.log(data);
