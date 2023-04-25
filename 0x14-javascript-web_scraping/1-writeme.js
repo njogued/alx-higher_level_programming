@@ -14,4 +14,4 @@ const text = process.argv[3];
 
 writeFile(file, text, 'utf-8', (err) => {
   if (err) throw err;
-  });
+});
