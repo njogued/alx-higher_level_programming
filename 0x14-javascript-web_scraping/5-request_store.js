@@ -13,6 +13,6 @@ const rq = require('request');
 rq(address, (error, response, body) => {
   if (error) throw error;
   fs.writeFile(file, body, 'utf-8', (error) => {
-  if (error) console.log(error)
+    if (error) console.log(error);
   });
-  });
+});
