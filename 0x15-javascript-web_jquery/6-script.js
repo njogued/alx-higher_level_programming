@@ -1,6 +1,7 @@
-<script> 
+<script>
   $(document).ready(function() {
-  $("#update_header").on( "click", function() {
-    $('header').text("New Header!!!");
-  })});
-</script>
+  $('#update_header').on('click', function () {
+    $('header').text('New Header!!!');
+  })
+});
+</script>;
